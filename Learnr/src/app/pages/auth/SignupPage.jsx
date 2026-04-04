@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sparkles, Mail, Chrome, Wand2, Lock, Eye, EyeOff, ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { Mail, Chrome, Wand2, Lock, Eye, EyeOff, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import useAuth from '../../../hooks/useAuth';
 import { useTheme } from '../../../context/ThemeContext';
 import './AuthPages.css';
@@ -211,7 +211,6 @@ export default function SignupPage() {
     <div className={`auth-page ${useLightLayout ? 'auth-page--light' : ''}`}>
       <div className="auth-page__form-side">
         <Link to="/" className={`auth-page__brand ${useLightLayout ? 'auth-page__brand--dark' : ''}`}>
-          <div className="auth-page__brand-logo"><Sparkles size={16} /></div>
           <span>Learnr</span>
         </Link>
 

@@ -1,6 +1,6 @@
 import { Link, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, Eye, EyeOff, Sparkles, CheckCircle2, ArrowLeft } from 'lucide-react';
+import { Lock, Eye, EyeOff, CheckCircle2, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import useAuth from '../../../hooks/useAuth';
 import { useTheme } from '../../../context/ThemeContext';
@@ -78,7 +78,6 @@ export default function ResetPasswordPage() {
       <div className={`auth-page auth-page--single ${isLightTheme ? 'auth-page--light' : ''}`}>
         <div className="auth-page__form-side auth-page__form-side--centered">
           <div className="auth-page__brand auth-page__brand--inline">
-            <div className="auth-page__brand-logo"><Sparkles size={16} /></div>
             <span>Learnr</span>
           </div>
 
@@ -137,9 +136,8 @@ export default function ResetPasswordPage() {
 
   return (
     <div className={`auth-page ${isLightTheme ? 'auth-page--light' : ''}`}>
-      <div className="auth-page__form-side">
-        <div className="auth-page__brand" onClick={() => navigate('/')}>
-          <div className="auth-page__brand-logo"><Sparkles size={16} /></div>
+        <div className="auth-page__form-side">
+        <div className="auth-page__brand" onClick={() => navigate('/') }>
           <span>Learnr</span>
         </div>
 

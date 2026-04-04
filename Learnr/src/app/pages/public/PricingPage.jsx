@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { Check, Sparkles } from 'lucide-react';
+import { Check } from 'lucide-react';
 import useAuth from '../../../hooks/useAuth';
 import { useToast } from '../../../hooks/useToast';
 import './PricingPage.css';
@@ -121,7 +121,6 @@ export default function PricingPage() {
       {!inAppShellRoute && (
         <header className="pricing-nav">
           <Link to="/" className="pricing-nav__brand">
-            <Sparkles size={16} />
             Learnr
           </Link>
           <div className="pricing-nav__actions">

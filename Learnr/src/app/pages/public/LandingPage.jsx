@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Meta from '../../../components/Meta';
 import { motion } from 'framer-motion';
-import { Sparkles, Play, Zap, BookOpen, FlaskConical, ChevronRight, Star } from 'lucide-react';
+import { Play, Zap, BookOpen, FlaskConical, ChevronRight } from 'lucide-react';
 import './LandingPage.css';
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: (i = 0) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.6, ease: [0.4,0,0.2,1] } }) };
@@ -11,8 +11,7 @@ function NavBar() {
     <nav className="lp-nav">
       <div className="lp-nav__inner">
         <div className="lp-nav__brand">
-          <div className="lp-nav__logo"><Sparkles size={18} /></div>
-          <span>Study Buddy</span>
+          <span>Learnr</span>
         </div>
         <ul className="lp-nav__links">
           <li><a href="#features">Features</a></li>
@@ -65,12 +64,11 @@ export default function LandingPage() {
           </motion.h1>
 
           <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={2} className="lp-hero__sub">
-            Study Buddy uses advanced neural networks to transform your raw lecture notes into structured knowledge, flashcards, and summaries in seconds.
+            Learnr uses advanced neural networks to transform your raw lecture notes into structured knowledge, flashcards, and summaries in seconds.
           </motion.p>
 
           <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={3} className="lp-hero__ctas">
             <Link to="/signup" className="lp-btn lp-btn--primary lp-btn--lg">
-              <Sparkles size={16} />
               Get Started Free
             </Link>
             <button className="lp-btn lp-btn--ghost lp-btn--lg">
@@ -130,11 +128,9 @@ export default function LandingPage() {
       <section className="lp-cta-band">
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="lp-cta-band__inner">
           <div className="lp-cta-band__glow" />
-          <div className="lp-cta-band__stars">
-            {[...Array(5)].map((_,i)=><Star key={i} size={14} fill="currentColor" />)}
-          </div>
+          
           <h2>Ready to boost your academic performance?</h2>
-          <p>Join over 50,000+ students from top universities worldwide who are already using Study Buddy to excel in their studies.</p>
+          <p>Join over 50,000+ students from top universities worldwide who are already using Learnr to excel in their studies.</p>
           <div className="lp-hero__ctas">
             <Link to="/signup" className="lp-btn lp-btn--primary lp-btn--lg">Get Started for Free</Link>
             <Link to="/pricing" className="lp-btn lp-btn--ghost lp-btn--lg">View Pricing</Link>
@@ -145,8 +141,7 @@ export default function LandingPage() {
       {/* ── Footer ───────────────────────────────────── */}
       <footer className="lp-footer">
         <div className="lp-footer__brand">
-          <div className="lp-nav__logo"><Sparkles size={14} /></div>
-          <span>Study Buddy</span>
+          <span>Learnr</span>
         </div>
         <div className="lp-footer__links">
           <a href="#privacy">Privacy Policy</a>
@@ -154,7 +149,7 @@ export default function LandingPage() {
           <a href="#security">Security</a>
           <a href="#contact">Contact Us</a>
         </div>
-        <p className="lp-footer__copy">© 2024 Study Buddy AI. Engineered for excellence.</p>
+        <p className="lp-footer__copy">© 2024 Learnr AI. Engineered for excellence.</p>
       </footer>
     </div>
   );

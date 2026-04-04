@@ -11,7 +11,7 @@ export const UI_LANGUAGES = [
   { code: 'ar', label: 'Arabic' },
 ];
 
-const STORAGE_KEY = 'studybuddy.uiLanguage';
+const STORAGE_KEY = 'learnr.uiLanguage';
 
 export const I18nContext = createContext(null);
 
