@@ -1,0 +1,137 @@
+/* Default = dark mode (ThemeContext removes data-theme for dark) */
+:root {
+  --bg: #0e1330;
+  --bg-1: #151b44;
+  --bg-2: #1d2459;
+  --bg-elev: #242d63;
+  --bg-glass: rgba(176, 187, 255, 0.08);
+  --bg-glass-h: rgba(176, 187, 255, 0.14);
+
+  --border: rgba(188, 198, 255, 0.14);
+  --border-h: rgba(109, 236, 222, 0.42);
+  --border-a: rgba(85, 216, 206, 0.62);
+
+  --brand: #5ee9dc;
+  --brand-strong: #14c8be;
+  --brand-dim: rgba(94, 233, 220, 0.15);
+  --brand-glow: rgba(94, 233, 220, 0.3);
+
+  --accent: #1d234f;
+  --accent-2: #2c3471;
+  --accent-soft: rgba(44, 52, 113, 0.36);
+
+  --green: #22c55e;
+  --green-dim: rgba(34, 197, 94, 0.14);
+  --red: #ef4444;
+  --red-dim: rgba(239, 68, 68, 0.16);
+  --amber: #f3c76c;
+  --amber-dim: rgba(243, 199, 108, 0.2);
+
+  --t1: #f4f7ff;
+  --t2: #adb8dc;
+  --t3: #7f8aac;
+  --t4: #5e6788;
+
+  --grad-brand: linear-gradient(135deg, #71efe2 0%, #35d8ce 54%, #2f86ee 100%);
+  --grad-purple: linear-gradient(135deg, #2f356f 0%, #1a214f 100%);
+  --grad-surface: linear-gradient(150deg, #252f6d 0%, #1b2356 100%);
+  --grad-hero: radial-gradient(ellipse 70% 65% at 70% 20%, rgba(53, 216, 206, 0.22) 0%, transparent 70%);
+
+  --shadow-sm: 0 3px 10px rgba(5, 8, 26, 0.22);
+  --shadow-md: 0 16px 38px rgba(5, 8, 26, 0.36);
+  --shadow-lg: 0 34px 80px rgba(2, 6, 22, 0.55);
+  --shadow-glow: 0 0 32px rgba(94, 233, 220, 0.22);
+  --shadow-glow-l: 0 0 54px rgba(94, 233, 220, 0.3);
+
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 32px;
+  --r-2xl: 42px;
+  --r-pill: 9999px;
+
+  --blur-sm: 8px;
+  --blur-md: 15px;
+  --blur-lg: 28px;
+
+  --font: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Sora', 'Manrope', sans-serif;
+
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast: 0.14s cubic-bezier(0.4, 0, 0.2, 1);
+  --t-mid: 0.24s cubic-bezier(0.4, 0, 0.2, 1);
+  --t-slow: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* legacy aliases kept for existing pages */
+  --purple: var(--accent-2);
+  --purple-l: var(--brand);
+  --purple-dim: var(--brand-dim);
+  --purple-glow: var(--brand-glow);
+  --purple-glow-l: rgba(94, 233, 220, 0.42);
+  --cyan: var(--brand);
+  --cyan-dim: var(--brand-dim);
+  --cyan-glow: var(--brand-glow);
+}
+
+/* Explicit light mode */
+html[data-theme='light'] {
+  --bg: #f3f2fb;
+  --bg-1: #ecebf8;
+  --bg-2: #e3e2f4;
+  --bg-elev: #ffffff;
+  --bg-glass: rgba(34, 44, 98, 0.05);
+  --bg-glass-h: rgba(34, 44, 98, 0.09);
+
+  --border: rgba(34, 44, 98, 0.11);
+  --border-h: rgba(17, 151, 143, 0.34);
+  --border-a: rgba(17, 151, 143, 0.52);
+
+  --brand: #0f8f86;
+  --brand-strong: #0a766f;
+  --brand-dim: rgba(15, 143, 134, 0.12);
+  --brand-glow: rgba(15, 143, 134, 0.2);
+
+  --accent: #1a1e47;
+  --accent-2: #262f70;
+  --accent-soft: rgba(38, 47, 112, 0.12);
+
+  --green: #149558;
+  --green-dim: rgba(20, 149, 88, 0.16);
+  --red: #cf3046;
+  --red-dim: rgba(207, 48, 70, 0.14);
+  --amber: #d6a950;
+  --amber-dim: rgba(214, 169, 80, 0.18);
+
+  --t1: #151a3f;
+  --t2: #49547a;
+  --t3: #687396;
+  --t4: #8b94b3;
+
+  --grad-brand: linear-gradient(135deg, #0f8f86 0%, #36bab2 54%, #4058b8 100%);
+  --grad-purple: linear-gradient(135deg, #2a3278 0%, #1f265f 100%);
+  --grad-surface: linear-gradient(145deg, #f7f6fd 0%, #ececf9 100%);
+  --grad-hero: radial-gradient(ellipse 76% 70% at 72% 18%, rgba(20, 157, 145, 0.15) 0%, transparent 70%);
+
+  --shadow-sm: 0 2px 8px rgba(19, 28, 69, 0.08);
+  --shadow-md: 0 12px 26px rgba(19, 28, 69, 0.14);
+  --shadow-lg: 0 24px 52px rgba(19, 28, 69, 0.2);
+  --shadow-glow: 0 0 26px rgba(15, 143, 134, 0.2);
+  --shadow-glow-l: 0 0 42px rgba(15, 143, 134, 0.25);
+
+  --purple: var(--accent-2);
+  --purple-l: var(--brand);
+  --purple-dim: var(--brand-dim);
+  --purple-glow: var(--brand-glow);
+  --purple-glow-l: rgba(15, 143, 134, 0.35);
+  --cyan: var(--brand);
+  --cyan-dim: var(--brand-dim);
+  --cyan-glow: var(--brand-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-fast: 0s;
+    --t-mid: 0s;
+    --t-slow: 0s;
+  }
+}

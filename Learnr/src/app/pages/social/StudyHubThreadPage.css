@@ -1,0 +1,691 @@
+.studyhub-thread-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.25rem 0.95rem 1.8rem;
+  display: grid;
+  gap: 0.76rem;
+  position: relative;
+}
+
+.studyhub-thread-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(38rem 20rem at 100% 0%, color-mix(in srgb, var(--brand) 14%, transparent), transparent 74%),
+    radial-gradient(34rem 18rem at 0% 100%, color-mix(in srgb, var(--accent-2) 22%, transparent), transparent 76%);
+}
+
+.studyhub-thread-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.studyhub-thread-back {
+  justify-self: start;
+  border: none;
+  background: transparent;
+  color: var(--brand);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.28rem 0.42rem;
+  border-radius: 8px;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.studyhub-thread-back:hover {
+  background: color-mix(in srgb, var(--brand) 14%, transparent);
+  color: var(--t1);
+}
+
+.studyhub-thread-main {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--bg-elev) 86%, var(--bg));
+  padding: 0.85rem;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.studyhub-thread-main--skeleton {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: 1fr;
+}
+
+.studyhub-thread-main__skeleton-line {
+  height: 12px;
+  border-radius: 999px;
+}
+
+.studyhub-thread-main__skeleton-line--title {
+  height: 22px;
+  width: 64%;
+}
+
+.studyhub-thread-main__skeleton-line--short {
+  width: 48%;
+}
+
+.studyhub-thread-main__skeleton-block {
+  height: 220px;
+  border-radius: 14px;
+}
+
+.studyhub-thread-main__votes {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 0.2rem;
+  color: var(--t2);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.studyhub-thread-main__content h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.12rem, 3vw, 1.46rem);
+  letter-spacing: -0.02em;
+  color: var(--t1);
+}
+
+.studyhub-thread-main__meta {
+  margin: 0.24rem 0 0;
+  color: var(--t3);
+  font-size: 0.7rem;
+}
+
+.studyhub-thread-main__category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  margin-top: 0.4rem;
+  padding: 0.18rem 0.48rem;
+  border-radius: 9px;
+  border: 1px solid var(--cat-border, rgba(14, 165, 233, 0.32));
+  background: var(--cat-bg, rgba(14, 165, 233, 0.12));
+  color: var(--cat-color, #67e8f9);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.studyhub-thread-main__body {
+  margin: 0.46rem 0 0;
+  color: var(--t2);
+  white-space: pre-wrap;
+  font-size: 0.84rem;
+  line-height: 1.52;
+}
+
+.studyhub-thread-main__image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  margin-top: 0.52rem;
+}
+
+.studyhub-thread-main__actions {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.studyhub-thread-main__actions button {
+  border: none;
+  background: transparent;
+  color: var(--t2);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0;
+  font-size: 0.72rem;
+}
+
+.studyhub-thread-main__actions span {
+  color: var(--t3);
+  font-size: 0.7rem;
+}
+
+.studyhub-menu {
+  position: relative;
+}
+
+.studyhub-menu__trigger {
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-elev) 82%, var(--bg));
+  color: var(--t2);
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
+}
+
+.studyhub-menu__trigger:hover {
+  border-color: color-mix(in srgb, var(--brand) 52%, transparent);
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+  color: var(--t1);
+}
+
+.studyhub-menu__dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.25rem);
+  min-width: 160px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-elev) 92%, var(--bg));
+  box-shadow: var(--shadow-lg);
+  z-index: 25;
+  padding: 0.25rem;
+  display: grid;
+  gap: 0.1rem;
+}
+
+.studyhub-menu__dropdown button {
+  border: none;
+  background: transparent;
+  color: var(--t2);
+  text-align: left;
+  width: 100%;
+  font-size: 0.7rem;
+  border-radius: 9px;
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.studyhub-menu__dropdown button:hover {
+  background: var(--bg-glass-h);
+  color: var(--t1);
+}
+
+.studyhub-edit-category-menu {
+  width: 100%;
+}
+
+.studyhub-edit-category-menu__trigger {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.studyhub-edit-category-menu__dropdown {
+  left: 0;
+  right: auto;
+  width: 100%;
+  max-height: 260px;
+  overflow: auto;
+}
+
+.studyhub-thread-edit {
+  display: grid;
+  gap: 0.44rem;
+}
+
+.studyhub-thread-edit input,
+.studyhub-thread-edit textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-elev) 84%, var(--bg));
+  color: var(--t1);
+  padding: 0.55rem 0.65rem;
+}
+
+.studyhub-thread-edit__actions {
+  display: inline-flex;
+  gap: 0.45rem;
+}
+
+.studyhub-thread-edit__actions button {
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--bg-elev) 84%, var(--bg));
+  color: var(--t2);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+}
+
+.studyhub-comment-compose,
+.studyhub-comment-list {
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--bg-elev) 86%, var(--bg));
+  padding: 0.85rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.studyhub-comment-compose h2,
+.studyhub-comment-list h3 {
+  margin: 0 0 0.58rem;
+  font-size: 0.9rem;
+  color: var(--t1);
+}
+
+.studyhub-comment-compose textarea,
+.studyhub-reply-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-elev) 84%, var(--bg));
+  color: var(--t1);
+  padding: 0.55rem 0.65rem;
+  font-size: 0.8rem;
+  resize: vertical;
+}
+
+.studyhub-comment-compose button,
+.studyhub-reply-form button {
+  margin-top: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--brand) 54%, transparent);
+  border-radius: 10px;
+  background: var(--brand-dim);
+  color: var(--brand);
+  padding: 0.4rem 0.72rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast), opacity var(--t-fast);
+}
+
+.studyhub-comment-compose button:hover:not(:disabled),
+.studyhub-reply-form button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--brand) 20%, transparent);
+  border-color: color-mix(in srgb, var(--brand) 78%, transparent);
+  transform: translateY(-1px);
+}
+
+.studyhub-comment-compose button:disabled,
+.studyhub-reply-form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.studyhub-comment {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0.6rem;
+  padding: 0.68rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.studyhub-comment:first-of-type {
+  border-top: none;
+}
+
+.studyhub-comment__votes {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0.1rem;
+  font-size: 0.72rem;
+  color: var(--t2);
+  font-weight: 700;
+}
+
+.studyhub-vote-btn {
+  border: none;
+  background: transparent;
+  color: var(--t3);
+  cursor: pointer;
+  border-radius: 9px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.studyhub-vote-btn:hover {
+  background: var(--bg-glass-h);
+  color: var(--t1);
+}
+
+.studyhub-vote-btn--up {
+  color: #22c55e;
+}
+
+.studyhub-vote-btn--down {
+  color: #ef4444;
+}
+
+.studyhub-comment__meta {
+  margin: 0;
+  color: var(--t3);
+  font-size: 0.66rem;
+}
+
+.studyhub-comment__body {
+  margin: 0.28rem 0 0;
+  color: var(--t2);
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.studyhub-comment__actions {
+  margin-top: 0.42rem;
+  display: inline-flex;
+  gap: 0.55rem;
+}
+
+.studyhub-comment__actions button {
+  border: none;
+  background: transparent;
+  color: var(--t3);
+  font-size: 0.68rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0;
+}
+
+.studyhub-comment__edit-wrap {
+  margin-top: 0.35rem;
+}
+
+.studyhub-comment__edit-wrap textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-elev) 84%, var(--bg));
+  color: var(--t1);
+  padding: 0.5rem 0.6rem;
+}
+
+.studyhub-comment__edit-actions {
+  margin-top: 0.35rem;
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.studyhub-comment__edit-actions button {
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--bg-elev) 84%, var(--bg));
+  color: var(--t2);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.3rem 0.62rem;
+  cursor: pointer;
+}
+
+.studyhub-reply-form {
+  margin-top: 0.45rem;
+}
+
+.studyhub-comment-list__empty {
+  margin: 0;
+  color: var(--t3);
+  font-size: 0.78rem;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 0.58rem 0.68rem;
+  background: color-mix(in srgb, var(--bg-glass) 70%, transparent);
+}
+
+.studyhub-report-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 22, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 220;
+  padding: 1rem;
+}
+
+.studyhub-edit-modal__backdrop,
+.studyhub-delete-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 22, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 220;
+  padding: 1rem;
+}
+
+.studyhub-edit-modal,
+.studyhub-delete-modal {
+  width: min(520px, 100%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--bg-elev) 92%, var(--bg));
+  box-shadow: var(--shadow-lg);
+}
+
+.studyhub-edit-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.studyhub-edit-modal__head h3,
+.studyhub-delete-modal h3 {
+  margin: 0;
+  color: var(--t1);
+  font-size: 0.86rem;
+}
+
+.studyhub-delete-modal h3 {
+  padding: 0 0.8rem;
+}
+
+.studyhub-edit-modal__head button {
+  border: none;
+  background: transparent;
+  color: var(--t3);
+  cursor: pointer;
+}
+
+.studyhub-edit-modal__body {
+  padding: 0.74rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.studyhub-edit-modal__body input,
+.studyhub-edit-modal__body textarea,
+.studyhub-edit-modal__body select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-elev) 84%, var(--bg));
+  color: var(--t1);
+  padding: 0.55rem 0.65rem;
+}
+
+.studyhub-edit-modal__actions,
+.studyhub-delete-modal__actions {
+  padding: 0 0.74rem 0.74rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+.studyhub-edit-modal__actions button,
+.studyhub-delete-modal__actions button {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg-elev) 84%, var(--bg));
+  color: var(--t2);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.36rem 0.68rem;
+  cursor: pointer;
+}
+
+.studyhub-delete-modal {
+  padding-top: 0.75rem;
+}
+
+.studyhub-delete-modal p {
+  margin: 0.5rem 0.8rem 0.75rem;
+  color: var(--t3);
+  font-size: 0.78rem;
+}
+
+.studyhub-report-modal {
+  width: min(460px, 100%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--bg-elev) 92%, var(--bg));
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.studyhub-report-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.72rem 0.78rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.studyhub-report-modal__head h3 {
+  margin: 0;
+  color: var(--t1);
+  font-size: 0.84rem;
+}
+
+.studyhub-report-modal__head button {
+  border: none;
+  background: transparent;
+  color: var(--t3);
+  cursor: pointer;
+}
+
+.studyhub-report-modal__form {
+  display: grid;
+  gap: 0.42rem;
+  padding: 0.74rem;
+}
+
+.studyhub-report-modal__form label {
+  font-size: 0.68rem;
+  color: var(--t3);
+}
+
+.studyhub-report-modal__form select,
+.studyhub-report-modal__form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-elev) 84%, var(--bg));
+  color: var(--t1);
+  padding: 0.5rem 0.6rem;
+}
+
+.studyhub-report-modal__form button {
+  justify-self: end;
+  border: 1px solid color-mix(in srgb, var(--red) 52%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--red) 16%, transparent);
+  color: var(--red);
+  padding: 0.38rem 0.68rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+.studyhub-thread-back:focus-visible,
+.studyhub-vote-btn:focus-visible,
+.studyhub-menu__trigger:focus-visible,
+.studyhub-menu__dropdown button:focus-visible,
+.studyhub-thread-edit__actions button:focus-visible,
+.studyhub-comment-compose button:focus-visible,
+.studyhub-reply-form button:focus-visible,
+.studyhub-comment__actions button:focus-visible,
+.studyhub-comment__edit-actions button:focus-visible,
+.studyhub-edit-modal__actions button:focus-visible,
+.studyhub-delete-modal__actions button:focus-visible,
+.studyhub-report-modal__form button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand) 72%, transparent);
+  outline-offset: 2px;
+}
+
+.studyhub-thread-edit input:focus-visible,
+.studyhub-thread-edit textarea:focus-visible,
+.studyhub-comment-compose textarea:focus-visible,
+.studyhub-reply-form textarea:focus-visible,
+.studyhub-comment__edit-wrap textarea:focus-visible,
+.studyhub-edit-modal__body input:focus-visible,
+.studyhub-edit-modal__body textarea:focus-visible,
+.studyhub-edit-modal__body select:focus-visible,
+.studyhub-report-modal__form select:focus-visible,
+.studyhub-report-modal__form textarea:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand) 58%, transparent);
+  outline-offset: 1px;
+  border-color: color-mix(in srgb, var(--brand) 62%, var(--border));
+}
+
+@media (max-width: 767px) {
+  .studyhub-thread-page {
+    padding: 1rem 0.72rem 1.45rem;
+  }
+
+  .studyhub-thread-main {
+    grid-template-columns: 48px 1fr;
+    padding: 0.72rem;
+    border-radius: 18px;
+  }
+
+  .studyhub-comment-compose,
+  .studyhub-comment-list {
+    border-radius: 18px;
+    padding: 0.72rem;
+  }
+
+  .studyhub-comment {
+    grid-template-columns: 36px 1fr;
+    gap: 0.46rem;
+  }
+
+  .studyhub-vote-btn {
+    width: 24px;
+    height: 24px;
+  }
+
+  .studyhub-thread-main__image {
+    max-height: 280px;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "paths": [
+    "/",
+    "/pricing",
+    "/login",
+    "/signup",
+    "/app/generate",
+    "/app/decks",
+    "/app/public-decks",
+    "/app/studyhub"
+  ]
+}
